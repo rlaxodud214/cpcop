@@ -6,9 +6,6 @@ def index(request):
     return render(request, 'index.html')
 
 def traffic(request):
-    lat = request.GET.get('latitude')
-    long = request.GET.get('longitude')
-    data = {'title': 'Traffic', 'lat': lat, 'long': long, 'loc':Reverse_location(lat,long)}
     return render(request, 'ToBi/traffic.html', data)
 
 def weather(request):
