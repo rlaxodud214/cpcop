@@ -120,7 +120,7 @@ def eclass(id, password):
     options.add_argument('disable-gpu')
 
     # 위치 지정
-    driver = webdriver.Chrome("/home/bitnami/cpcop/cpcop1/ToBi/transfer/chromedriver.exe", options=options)
+    driver = webdriver.Chrome("/home/bitnami/cpcop/cpcop1/ToBi/transfer/chromedriver", options=options)
 
     # 웹 자원 로드를 위해 암묵적으로 딜레이
     delay_time = 3
@@ -236,6 +236,7 @@ def main():
     m2 = int(std[1])
     dict1 = {}
     dict1['starty'], dict1['startx'] = location.dict_location[index1]  # 정왕 -> 정왕역 좌표 [37.351735, 126.742989] (역이름으로 좌표 반환)
+    dict1['starty'], dict1['startx'] = "37.497969", "127.026654"
     time_info = Span_Time(dict1['startx'], dict1['starty'])
     h3, m3 = Sub_Time(h2, m2, int(time_info))
     Travel_time_bus = Near_Bus_Station(now_location[0], now_location[1])
