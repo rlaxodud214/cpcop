@@ -3,7 +3,7 @@ from urllib.parse import urlencode, quote_plus, unquote
 from bs4 import BeautifulSoup
 from selenium import webdriver
 # location.py 파일 필요 -> 딕셔너리의 키는 역이름이고 값은 좌표를 가진 데이터 파일임
-import xmltodict, json, urllib, location, requests, time, tabula
+import xmltodict, json, urllib, requests, time, tabula
 import pandas as pd
 import hashlib
 import hmac
