@@ -182,7 +182,7 @@ def eclass(id, password):
     options.add_argument('disable-gpu')
 
     # 위치 지정
-    driver = webdriver.Chrome("C:\\ttemp/chromedriver.exe", options=options)
+    driver = webdriver.Chrome("/home/bitnami/cpcop/cpcop1/ToBi/transfer/chromedriver", options=options)
 
     # 웹 자원 로드를 위해 암묵적으로 딜레이
     delay_time = 3
