@@ -1,0 +1,19 @@
+{% extends 'section.html' %}
+
+{% block content %}
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Traffic</h1>
+      <p class="lead">교통정보입니다</p>
+        <p>위도 {{ lat }}</p>
+        <p>경도 {{ long }}</p>
+        <p>위치 : {{ loc }}</p>
+        <p>{{ intro }}</p>
+        <p>{{ near }}</p>
+        <p>{{ recommend }}</p>
+        <p>{{ bus }}</p>
+        <p>{{ gogo }}</p>
+        <p>{{ station }}</p>
+        <p>{{ school }}</p>
+        <p>{{ during }}</p>
+    </div>
+{% endblock %}
