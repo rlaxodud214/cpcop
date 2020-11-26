@@ -22,8 +22,8 @@ def Span_Time(Near_Station_Lat, Near_Station_Lon):
     params = '?' + urlencode({
         quote_plus(
             "serviceKey"): "p%2FjvMYI4C7znYs1z7bwkpbC5XOPhQ2c5XMyRYcH6A%2BLnvRkIO95%2F9tyKecxg06ais5rGNSxsY6eplXsP3%2F%2FiSw%3D%3D",
-        quote_plus("startX"): Near_Station_Lat,  # 좌표126.74
-        quote_plus("startY"): Near_Station_Lon,  # 37.351828
+        quote_plus("startX"):"127.026654" ,  # 좌표126.74
+        quote_plus("startY"):"37.497969", # 37.351828
         quote_plus("endX"): '126.74',  # 정왕역 좌표127.027637
         quote_plus("endY"): '37.351828',  # 37.497950
     })
@@ -68,8 +68,8 @@ def Near_Bus_Station(lat, lon):
     params = '?' + urlencode({
         quote_plus(
             "serviceKey"): "p%2FjvMYI4C7znYs1z7bwkpbC5XOPhQ2c5XMyRYcH6A%2BLnvRkIO95%2F9tyKecxg06ais5rGNSxsY6eplXsP3%2F%2FiSw%3D%3D",
-        quote_plus("startX"): lon,  # 현재위치가 들어갈 곳
-        quote_plus("startY"): lat,  # 현재위치가 들어갈 곳
+        quote_plus("startX"): "37.497969",  # 현재위치가 들어갈 곳
+        quote_plus("startY"): "127.026654",  # 현재위치가 들어갈 곳
         quote_plus("endX"): location.dict_location[Near_Sub_Station(lat, lon)[:-1]][1],  # 이 좌표는 현재위치로부터 가까운 역인 강남역의 좌표임
         quote_plus("endY"): location.dict_location[Near_Sub_Station(lat, lon)[:-1]][0],
     })
