@@ -10,7 +10,7 @@ import time
 from urllib.parse import urlencode
 from urllib.request import urlopen
 import urllib
-import ToBi.transfer.dict_go as dict_go
+import dict_go as dict_go
 # dict_go.py 있어야함 -> 딕셔너리의 키는 시간, 값은 셔틀 분 데이터 값
 
 
@@ -120,7 +120,7 @@ def eclass(id, password):
     options.add_argument('disable-gpu')
 
     # 위치 지정
-    driver = webdriver.Chrome("chromedriver.exe", options=options)
+    driver = webdriver.Chrome("/home/bitnami/cpcop/cpcop1/ToBi/transfer/chromedriver.exe", options=options)
 
     # 웹 자원 로드를 위해 암묵적으로 딜레이
     delay_time = 3
