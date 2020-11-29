@@ -33,7 +33,7 @@ def IPCall():
     return array[0]
 
 
- Signature Make
+# Signature Make
 def make_signature(method, basestring, timestamp, access_key, secret_key):
     message = method + " " + basestring + "\n" + timestamp + "\n" + access_key
     message = bytes(message, 'utf-8')
@@ -78,7 +78,7 @@ def Now_LatNLon():
     return (lat, lon)
 
 
- hour = 시간표 시간, Startx = 시작위치.....End
+# hour = 시간표 시간, Startx = 시작위치.....End
 def Span_Time(Near_Station_Lat, Near_Station_Lon):
     url = 'http://ws.bus.go.kr/api/rest/pathinfo/getPathInfoBySubway'
     params = '?' + urlencode({
@@ -178,11 +178,17 @@ def Near_Sub_Station(lat, lon):
 def eclass(id, password):
     # 크롬창을 띄우지 않는 옵션
     options = webdriver.ChromeOptions()
-    options.add_argument('headless')
+    options.add_argument('start-maximized')
+    options.headless = True
+    options.add_argument('disable-extensions')
+    options.add_argument('--single-process')
+    options.add_argument('--disable-dev-shm-usage')
     options.add_argument('disable-gpu')
-
+    options.add_argument('--no-sandbox')
+    options.add_argument("lang=ko_KR")  # 한국어!
+    
     # 위치 지정
-    driver = webdriver.Chrome("/home/bitnami/cpcop/cpcop1/ToBi/transfer/chromedriver", options=options)
+    driver = webdriver.Chrome("/home/bitnami/cpcop/cpcop1/ToBi/transfer/chromedriver", chrome_options=options)
 
     # 웹 자원 로드를 위해 암묵적으로 딜레이
     delay_time = 3
@@ -281,16 +287,16 @@ def Sub_Time(hour, minute, inja):
 start = time.time()
 dictgo = dict_go.dict_time_table_go
 now_location = ['37.491575', '127.030912']
- now_location = Now_LatNLon()
+now_location = Now_LatNLon()
 nearsub1 = Near_Sub_Station(now_location[0], now_location[1])  # 좌표(현재 위치) -> 정왕역 (좌표로 부터 가까운 역 검색)
 rjfflstlrks = time.time() - start
 print('응답시간 = '+str(rjfflstlrks))
 index1 = nearsub1.rstrip('역')  # 정왕역 -> 정왕
- n = time.localtime().tm_wday
+n = time.localtime().tm_wday
 n = 1
 weeks = ['월', '화', '수', '목', '금']
- print(weeks[n])
- data = int(eclass("2015162013", 'mouse3178!')[weeks[n]])
+print(weeks[n])
+data = int(eclass("2015162013", 'mouse3178!')[weeks[n]])
 data = eclass("2019152025", 'su9191su?k')[weeks[n]]
 h1 = int(data['hour'])
 m1 = int(data['minute'])
