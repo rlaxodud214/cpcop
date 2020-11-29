@@ -33,24 +33,29 @@
             <ul class="CTAs">
                 <form action="{% url 'traffic' %}" method="POST">
                     {% csrf_token %}
-                    <input type="hidden" id="Traf_lat" name="latitude" value="">
-                    <input type="hidden" id="Traf_long" name="longitude" value="">
-                    <input type="hidden" name="username" value="{{ id }}">
-                    <input type="hidden" name="password" value="{{ pw }}">
+                    <input type="hidden" name="Monday" value="{{ 월 }}">
+                    <input type="hidden" name="Tuesday" value="{{ 화 }}">
+                    <input type="hidden" name="Wednesday" value="{{ 수 }}">
+                    <input type="hidden" name="Thursday" value="{{ 목 }}">
+                    <input type="hidden" name="Friday" value="{{ 금 }}">
                     <p><button type="submit" class="btn btn-light  btn-block">교통정보</button></p>
                 </form>
                 <form action="{% url 'weather' %}" method="POST">
                     {% csrf_token %}
-                    <input type="hidden" id="Weat_lat" name="latitude" value="">
-                    <input type="hidden" id="Weat_long" name="longitude" value="">
-                    <input type="hidden" name="username" value="{{ id }}">
-                    <input type="hidden" name="password" value="{{ pw }}">
+                    <input type="hidden" name="Monday" value="{{ 월 }}">
+                    <input type="hidden" name="Tuesday" value="{{ 화 }}">
+                    <input type="hidden" name="Wednesday" value="{{ 수 }}">
+                    <input type="hidden" name="Thursday" value="{{ 목 }}">
+                    <input type="hidden" name="Friday" value="{{ 금 }}">
                     <p><button type="submit" class="btn btn-light btn-block">날씨정보</button></p>
                 </form>
                 <form action="{% url 'schedule' %}" method="POST">
                     {% csrf_token %}
-                    <input type="hidden" name="username" value="{{ id }}">
-                    <input type="hidden" name="password" value="{{ pw }}">
+                     <input type="hidden" name="Monday" value="{{ 월 }}">
+                    <input type="hidden" name="Tuesday" value="{{ 화 }}">
+                    <input type="hidden" name="Wednesday" value="{{ 수 }}">
+                    <input type="hidden" name="Thursday" value="{{ 목 }}">
+                    <input type="hidden" name="Friday" value="{{ 금 }}">
                     <p><button type="submit" class="btn btn-light btn-block">시간표정보</button></p>
                 </form>
                 <p><button type="button" class="btn btn-light btn-block" onclick="location.href='{% url 'login' %}'">로그인</button></p>

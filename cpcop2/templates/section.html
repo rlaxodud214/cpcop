@@ -38,30 +38,38 @@
         <nav class="my-2 my-md-0 mr-md-3">
             <form action="{% url 'schedule' %}" method="POST" style="float: right">
                 {%  csrf_token %}
-                <input type="hidden" name="username" value="{{ id }}">
-                <input type="hidden" name="password" value="{{ pw }}">
+                 <input type="hidden" name="Monday" value="{{ 월 }}">
+                <input type="hidden" name="Tuesday" value="{{ 화 }}">
+                <input type="hidden" name="Wednesday" value="{{ 수 }}">
+                <input type="hidden" name="Thursday" value="{{ 목 }}">
+                <input type="hidden" name="Friday" value="{{ 금 }}">
               <button class="btn btn-outline-light btn-space">시간표정보</button>
             </form>
             <form action="{% url 'weather' %}" method="POST" style="float: right">
                 {%  csrf_token %}
-              <input type="hidden" id="Weat_lat" name="latitude" value="">
-              <input type="hidden" id="Weat_long" name="longitude" value="">
-              <input type="hidden" name="username" value="{{ id }}">
-                <input type="hidden" name="password" value="{{ pw }}">
+                <input type="hidden" name="Monday" value="{{ 월 }}">
+                <input type="hidden" name="Tuesday" value="{{ 화 }}">
+                <input type="hidden" name="Wednesday" value="{{ 수 }}">
+                <input type="hidden" name="Thursday" value="{{ 목 }}">
+                <input type="hidden" name="Friday" value="{{ 금 }}">
               <button class="btn btn-outline-light btn-space">날씨정보</button>
             </form>
             <form action="{% url 'traffic' %}" method="POST" style="float: right">
               {%  csrf_token %}
-              <input type="hidden" id="Traf_lat" name="latitude" value="">
-              <input type="hidden" id="Traf_long" name="longitude" value="">
-                <input type="hidden" name="username" value="{{ id }}">
-                <input type="hidden" name="password" value="{{ pw }}">
+                <input type="hidden" name="Monday" value="{{ 월 }}">
+                <input type="hidden" name="Tuesday" value="{{ 화 }}">
+                <input type="hidden" name="Wednesday" value="{{ 수 }}">
+                <input type="hidden" name="Thursday" value="{{ 목 }}">
+                <input type="hidden" name="Friday" value="{{ 금 }}">
               <button type="submit" class="btn btn-outline-light btn-space">교통정보</button>
             </form>
             <form action="{% url 'index' %}" method="POST" style="float: right">
               {%  csrf_token %}
-                <input type="hidden" name="username" value="{{ id }}">
-                <input type="hidden" name="password" value="{{ pw }}">
+               <input type="hidden" name="Monday" value="{{ 월 }}">
+                <input type="hidden" name="Tuesday" value="{{ 화 }}">
+                <input type="hidden" name="Wednesday" value="{{ 수 }}">
+                <input type="hidden" name="Thursday" value="{{ 목 }}">
+                <input type="hidden" name="Friday" value="{{ 금 }}">
               <button type="submit" class="btn btn-outline-light btn-space">Home</button>
             </form>
 
