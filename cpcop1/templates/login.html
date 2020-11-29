@@ -1,19 +1,40 @@
-<!DOCTYPE html>
+CTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <form method="POST" action="{% url 'index' %}">
-        {% csrf_token %}
-        Username:
-        <br>
-        <input name="username" type="text">
-        Password:
-        <input name="password" type="password">
-        <br>
-        <input type="submit" class="btn btn-primary" value="sign up">
-    </form>
-</body>
+
+	<head>
+
+		    <meta charset="UTF-8">
+
+		        <title>Title</title>
+
+	</head>
+
+	<body>
+
+		<form method="POST" action="{% url 'index' %}">
+
+			{% csrf_token %}
+
+			Username:
+
+			<br>
+
+			<input name="username" type="text">
+
+			Password:
+
+			<input name="password" type="password">
+
+			<br>
+
+			<input type="submit" class="btn btn-primary" value="sign up">
+
+		</form>
+
+	</body>
+
 </html>
+
+
+

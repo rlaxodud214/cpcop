@@ -179,7 +179,7 @@ def eclass(id, password):
     # 크롬창을 띄우지 않는 옵션
     options = webdriver.ChromeOptions()
     options.add_argument('start-maximized')
-    options.add_argument('headless')
+    options.headless = True
     options.add_argument('disable-extensions')
     options.add_argument('--single-process')
     options.add_argument('--disable-dev-shm-usage')
