@@ -7,20 +7,13 @@
 
 	  <body>
 		  <form method="POST" action="{% url 'index' %}">
-			  <h0 class="h2 mb-4 font-weight-normal">ToBi 서비스를 이용해주셔서 감사합니다.</h0>
-			  <br>
-			  <br>
+			{% csrf_token %}
 			  <h1 class="h3 mb-3 font-weight-normal">시간표 정보를 얻기 위해서 e-class 로그인이 필요합니다.</h1>
 			  <label for="inputEmail" class="sr-only">Email address</label>
 			  <input type="username" id="inputusername" class="form-control" placeholder="eclass-id" required autofocus>
 			  <label for="inputPassword" class="sr-only">Password</label>
 			  <input type="password" id="inputPassword" class="form-control" placeholder="eclass-password" required>
-			  <div class="checkbox mb-3">
-				  <label>
-					  <input type="checkbox" value="remember-me"> Remember me
-					</label>
-			    </div>
-				<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+			  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 			</form>
 	  </body>
 </html>
