@@ -55,7 +55,7 @@ a, a:hover, a:focus {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: rgba;
+    background: #007bff;
     color: #fff;
     transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
     transform-origin: bottom left;
@@ -69,7 +69,7 @@ a, a:hover, a:focus {
 #sidebar .sidebar-header {
     padding: 20px;
     text-align: center;
-    background: rgb(0 123 255 / 80%);
+    background: #007bff7d;
 }
 
 #sidebar ul.components {
