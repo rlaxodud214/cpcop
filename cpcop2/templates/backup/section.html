@@ -1,0 +1,103 @@
+{% load static %}
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <title>{{ title }}</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/pricing/">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/section.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+        <h5 class="my-0 mr-md-auto font-weight-normal" style="color: #FFFFFF;" href="">ToBi</h5>
+        <nav class="my-2 my-md-0 mr-md-3">
+            <form action="{% url 'schedule' %}" method="POST" style="float: right">
+                {%  csrf_token %}
+                 <input type="hidden" name="Monday" value="{{ 월 }}">
+                <input type="hidden" name="Tuesday" value="{{ 화 }}">
+                <input type="hidden" name="Wednesday" value="{{ 수 }}">
+                <input type="hidden" name="Thursday" value="{{ 목 }}">
+                <input type="hidden" name="Friday" value="{{ 금 }}">
+              <button class="btn btn-outline-light btn-space">시간표정보</button>
+            </form>
+            <form action="{% url 'weather' %}" method="POST" style="float: right">
+                {%  csrf_token %}
+                <input type="hidden" name="Monday" value="{{ 월 }}">
+                <input type="hidden" name="Tuesday" value="{{ 화 }}">
+                <input type="hidden" name="Wednesday" value="{{ 수 }}">
+                <input type="hidden" name="Thursday" value="{{ 목 }}">
+                <input type="hidden" name="Friday" value="{{ 금 }}">
+              <button class="btn btn-outline-light btn-space">날씨정보</button>
+            </form>
+            <form action="{% url 'traffic' %}" method="POST" style="float: right">
+              {%  csrf_token %}
+                <input type="hidden" name="Monday" value="{{ 월 }}">
+                <input type="hidden" name="Tuesday" value="{{ 화 }}">
+                <input type="hidden" name="Wednesday" value="{{ 수 }}">
+                <input type="hidden" name="Thursday" value="{{ 목 }}">
+                <input type="hidden" name="Friday" value="{{ 금 }}">
+              <button type="submit" class="btn btn-outline-light btn-space">교통정보</button>
+            </form>
+            <form action="{% url 'index' %}" method="POST" style="float: right">
+              {%  csrf_token %}
+               <input type="hidden" name="Monday" value="{{ 월 }}">
+                <input type="hidden" name="Tuesday" value="{{ 화 }}">
+                <input type="hidden" name="Wednesday" value="{{ 수 }}">
+                <input type="hidden" name="Thursday" value="{{ 목 }}">
+                <input type="hidden" name="Friday" value="{{ 금 }}">
+              <button type="submit" class="btn btn-outline-light btn-space">Home</button>
+            </form>
+
+        </nav>
+    </div>
+    {% block content %}
+    {%  endblock  %}
+</body>
+<script>
+        function getLocation(){
+            if(navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position){
+                    document.getElementById("Traf_lat").value = position.coords.latitude.toString();
+                    document.getElementById("Traf_long").value = position.coords.longitude.toString();
+                    document.getElementById("Weat_lat").value = position.coords.latitude.toString();
+                    document.getElementById("Weat_long").value = position.coords.longitude.toString();
+
+                }, function (error){
+                    console.error(error);
+                }, {
+                    enableHighAccuracy: false,
+                    maximumAge: 0,
+                    timeout: Infinity
+                });
+            }else{
+                alert('GPS를 지원하지 않습니다');
+            }
+        }
+        getLocation();
+    </script>
+</html>
