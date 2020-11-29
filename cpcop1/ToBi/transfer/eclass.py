@@ -7,9 +7,14 @@ import pandas as pd
 def eclass(usr_id, usr_pwd):
     # 크롬창을 띄우지 않는 옵션
     options = webdriver.ChromeOptions()
-    options.add_argument('headless')
+    options.add_argument('start-maximized')
+    options.headless = True
+    options.add_argument('disable-extensions')
+    options.add_argument('--single-process')
+    options.add_argument('--disable-dev-shm-usage')
     options.add_argument('disable-gpu')
-
+    options.add_argument('--no-sandbox')
+    options.add_argument("lang=ko_KR")  # 한국어!
     # 위치 지정
     driver = webdriver.Chrome("/home/bitnami/cpcop/cpcop1/ToBi/transfer/chromedriver", options=options)
 

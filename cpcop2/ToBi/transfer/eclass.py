@@ -123,7 +123,8 @@ def eclass1(usr_id, usr_pwd):
     # 위치 지정
 
     # 위치 지정
-    driver = webdriver.Chrome("C:\\Users\\dd\\Desktop\\CpCop\\ToBi\\transfer\\chromedriver.exe", options=options)
+    driver = webdriver.Chrome("/home/bitnami/cpcop/cpcop2/ToBi/transfer/chromedriver", chrome_options = options)
+
 
     # 웹 자원 로드를 위해 암묵적으로 딜레이
     delay_time = 3

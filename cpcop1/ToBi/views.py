@@ -12,7 +12,7 @@ import ToBi.transfer.location as location
 import time
 
 def login(request):
-    return render(request, 'login1.html')
+    return render(request, 'login.html')
 
 def index(request):
     id = request.POST['username']
