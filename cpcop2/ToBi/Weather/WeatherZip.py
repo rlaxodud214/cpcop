@@ -50,7 +50,7 @@ def weatherZip(la, lo):
         # pd.set_option('display.max_columns', 10)   # n개의 컬럼을 다 보여줘라~
         a = info[['현재온도', '비올확률', '강수량', 'now_time']]   #이부분 경지씨가 아주 수정함
         print(a)
-        return round(a['현재온도'][0],1), a['비올확률'][0], a['강수량'][0]
+        return info.to_dict
 
         # 최초 실행시
         # dt = info.to_excel("test.xlsx", encoding='euc-kr')
@@ -94,7 +94,8 @@ def weatherZip(la, lo):
         return
 
 if __name__ == "__main__":
-    weatherZip("37.3398","126.7335")
+    t = weatherZip("37.3398","126.7335")
+    print(t)
     # schedule.every(1).minutes.do(weatherZip)
     # # schedule.every(10).seconds.do(weatherZip)
     # while True:

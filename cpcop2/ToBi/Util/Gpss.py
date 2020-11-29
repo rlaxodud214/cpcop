@@ -3,7 +3,6 @@ import hmac
 import base64
 import requests
 import time
-import numpy as np
 from urllib.request import urlopen
 from urllib.parse import urlencode, quote_plus, unquote
 import json

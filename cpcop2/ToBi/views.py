@@ -40,12 +40,15 @@ def weather(request):
     Fri = request.POST['Friday']
     lat = GPS.location()[0]
     lon = GPS.location()[1]
-    loc = GPS.reverseLocation(lat,lon)
-    tem = Weather.weatherZip(lat,lon)[0]
-    rain = Weather.weatherZip(lat,lon)[1]
-    howrain = Weather.weatherZip(lat,lon)[2]
+    #loc = GPS.reverseLocation(lat,lon)
+    temp = Weather.weatherZip(lat,lon)['현재온도']
+    maxtemp = Weather.weatherZip(lat, lon)['최고온도']
+    mintemp = Weather.weatherZip(lat, lon)['최저온도']
+    rain = Weather.weatherZip(lat,lon)['비올확률']
+    howrain = Weather.weatherZip(lat,lon)['강수량']
 
-    data = {'title': 'Weather', '월':Mon, '화':Tue, '수':Wed, '목':Thu, '금':Fri, 'loc':loc, 'tem':tem, 'rain':rain, 'howrain':howrain}
+    data = {'title': 'Weather', '월':Mon, '화':Tue, '수':Wed, '목':Thu, '금':Fri, 'temp':temp, 'maxtemp':mintemp, 'maxtemp':mintemp,
+            'rain':rain, 'howrain':howrain}
     return render(request, 'ToBi/weather.html', data)
 
 def schedule(request):
