@@ -3,6 +3,7 @@ from django.shortcuts import render
 import ToBi.transfer.eclass as eclass
 import ToBi.Weather.WeatherZip as Weather
 import ToBi.Util.Gpss as GPS
+import ToBi.Weather.NaverWeather as naver
 
 def login(request):
     return render(request, 'login.html')
@@ -29,6 +30,9 @@ def traffic(request):
     Wed = request.POST['Wednesday']
     Thu = request.POST['Thursday']
     Fri = request.POST['Friday']
+    #loc = GPS.reverseLocation(lat, lon)
+    #print(loc)
+    print(lat, lon)
     data = {'title': 'Traffic',  '월':Mon, '화':Tue, '수':Wed, '목':Thu, '금':Fri}
     return render(request, 'ToBi/traffic.html', data)
 
@@ -41,16 +45,14 @@ def weather(request):
     lat = GPS.location()[0]
     lon = GPS.location()[1]
     #loc = GPS.reverseLocation(lat,lon)
-
-    temp = int(float(Weather.weatherZip(lat,lon)['현재온도']))
-    maxtemp = int(float(Weather.weatherZip(lat, lon)['최고온도']))
-    mintemp = int(float(Weather.weatherZip(lat, lon)['최저온도']))
-    rep = int(float(Weather.weatherZip(lat, lon)['습도']))
-    wds = int(float(Weather.weatherZip(lat, lon)['풍속']))
-    rain = int(float(Weather.weatherZip(lat,lon)['비올확률']))
-    howrain = int(float(Weather.weatherZip(lat,lon)['강수량']))
-    #print(Weather.weatherZip(lat, lon), type(Weather.weatherZip(lat,lon)))
-
+    data = naver.naverWeather("37.3398", "126.7335")
+    temp = data[0]
+    maxtemp = data[1]
+    mintemp = data[2]
+    rep = data[5]
+    wds = data[6]
+    rain = data[3]
+    howrain = data[4]
     data = {'title': 'Weather', '월':Mon, '화':Tue, '수':Wed, '목':Thu, '금':Fri, 'temp':temp, 'maxtemp':maxtemp, 'mintemp':mintemp,
             'rep':rep, 'wds':wds,'rain':rain, 'howrain':howrain}
     return render(request, 'ToBi/weather.html', data)
@@ -68,6 +70,4 @@ def schedule(request):
 lat = GPS.location()[0]
 lon = GPS.location()[1]
 # print(Weather.weatherZip(lat, lon), type(Weather.weatherZip(lat,lon)), '\n\n')
-print(float(Weather.weatherZip(lat,lon)['강수량']))
-print(float(Weather.weatherZip(lat, lon)['최고온도']))
 

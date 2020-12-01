@@ -12,7 +12,6 @@ def weatherZip(la, lo):
     lat = "37.3398"
     lon = "126.7335"
     nadata = na.naverWeather(lat, lon)
-    return nadata
     kodata = ka.korWeather(home_lat, home_lon, lat, lon)
     ondata = oa.openWeather(lat, lon)
     now_time=str()
