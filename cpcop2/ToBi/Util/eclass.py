@@ -119,7 +119,7 @@ def eclass1(usr_id, usr_pwd):
     options.add_argument('--disable-dev-shm-usage')
     options.add_argument('disable-gpu')
     options.add_argument('--no-sandbox')
-    #options.add_argument("lang=ko_KR")  # 한국어!
+    options.add_argument("lang=ko_KR")  # 한국어!
     # 위치 지정
 
     # 위치 지정
