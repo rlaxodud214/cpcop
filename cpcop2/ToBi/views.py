@@ -13,7 +13,10 @@ def index(request):
         id = request.POST['username']
         pw = request.POST['password']
         data = {'월':[[]], '화':[[]], '수':[[]], '목':[[]], '금':[[]]}
-        data.update(eclass.eclass1(id,pw))
+        try:
+            data.update(eclass.eclass1(id,pw))
+        except:
+            return render(request, 'Error.html', data)
         return render(request, 'index.html',data)
     except:
         Mon = request.POST['Monday']
