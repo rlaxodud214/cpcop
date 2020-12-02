@@ -2,8 +2,8 @@ from django.shortcuts import render
 
 import ToBi.transfer.eclass as eclass
 import ToBi.Weather.WeatherZip as Weather
-import ToBi.Util.Gpss as GPS
 import ToBi.Weather.NaverWeather as naver
+import ToBi.Util.Gpss as GPS
 
 def login(request):
     return render(request, 'login.html')
@@ -30,10 +30,9 @@ def traffic(request):
     Wed = request.POST['Wednesday']
     Thu = request.POST['Thursday']
     Fri = request.POST['Friday']
-    #loc = GPS.reverseLocation(lat, lon)
-    #print(loc)
-    print(lat, lon)
-    data = {'title': 'Traffic',  '월':Mon, '화':Tue, '수':Wed, '목':Thu, '금':Fri}
+    loc = request.POST['fixed_loc']
+
+    data = {'title': 'Traffic',  '월':Mon, '화':Tue, '수':Wed, '목':Thu, '금':Fri, 'loc':loc}
     return render(request, 'ToBi/traffic.html', data)
 
 def weather(request):
@@ -42,10 +41,10 @@ def weather(request):
     Wed = request.POST['Wednesday']
     Thu = request.POST['Thursday']
     Fri = request.POST['Friday']
-    lat = GPS.location()[0]
-    lon = GPS.location()[1]
+    loc = request.POST['fixed_loc']
     #loc = GPS.reverseLocation(lat,lon)
-    data = naver.naverWeather("37.3398", "126.7335")
+    loc_name = loc.split(',')
+    data = naver.naverWeather(loc_name[0], loc_name[1])
     temp = data[0]
     maxtemp = data[1]
     mintemp = data[2]
@@ -54,7 +53,7 @@ def weather(request):
     rain = data[3]
     howrain = data[4]
     data = {'title': 'Weather', '월':Mon, '화':Tue, '수':Wed, '목':Thu, '금':Fri, 'temp':temp, 'maxtemp':maxtemp, 'mintemp':mintemp,
-            'rep':rep, 'wds':wds,'rain':rain, 'howrain':howrain}
+            'rep':rep, 'wds':wds,'rain':rain, 'howrain':howrain, "loc":loc, 'loc_name':GPS.reverseLocation(loc_name[0],loc_name[1])}
     return render(request, 'ToBi/weather.html', data)
 
 def schedule(request):
@@ -63,11 +62,10 @@ def schedule(request):
     Wed = request.POST['Wednesday']
     Thu = request.POST['Thursday']
     Fri = request.POST['Friday']
-    data = {'title': 'Schedule', '월':Mon, '화':Tue, '수':Wed, '목':Thu, '금':Fri}
+    loc = request.POST['fixed_loc']
+    data = {'title': 'Schedule', '월':Mon, '화':Tue, '수':Wed, '목':Thu, '금':Fri, 'loc':loc}
     return render(request, 'ToBi/schedule.html', data)
 
 
-lat = GPS.location()[0]
-lon = GPS.location()[1]
 # print(Weather.weatherZip(lat, lon), type(Weather.weatherZip(lat,lon)), '\n\n')
 

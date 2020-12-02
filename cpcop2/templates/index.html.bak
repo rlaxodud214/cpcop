@@ -69,10 +69,8 @@
         </nav>
         <!-- Page Content Holder -->
         <div id="content">
-
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-
                     <button type="button" id="sidebarCollapse" class="navbar-btn">
                         <span></span>
                         <span></span>
@@ -80,13 +78,7 @@
                     </button>
                 </div>
             </nav>
-            <input type="radio" name="loc" value="37.494769,127.026635" checked="checked" onclick="goData()">강남<br>
-            <input type ="radio" name="loc"value="37.517565,126.723319" onclick="goData()">갈산<br>
-            <input type="radio" name="loc" value="37.374364,126.950909" onclick="goData()">금정<br>
-            <input type="radio" name="loc" value="37.278692,127.112100" onclick="goData()">기흥<br>
-
-            <br>
-	    <h4>안녕하세요 KPU ToBi입니다<br><br>
+	        <h4>안녕하세요 KPU ToBi입니다<br><br>
 
 		    시연목표 : 역 4개의 위치중 하나를 선택해서 웹서비스 시연<br> </h4>
 

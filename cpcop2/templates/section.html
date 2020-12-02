@@ -43,6 +43,7 @@
                 <input type="hidden" name="Wednesday" value="{{ 수 }}">
                 <input type="hidden" name="Thursday" value="{{ 목 }}">
                 <input type="hidden" name="Friday" value="{{ 금 }}">
+                <input type="hidden" name="fixed_loc" value="{{ loc }}">
               <button class="btn btn-outline-light btn-space">시간표정보</button>
             </form>
             <form action="{% url 'weather' %}" method="POST" style="float: right">
@@ -52,6 +53,7 @@
                 <input type="hidden" name="Wednesday" value="{{ 수 }}">
                 <input type="hidden" name="Thursday" value="{{ 목 }}">
                 <input type="hidden" name="Friday" value="{{ 금 }}">
+                <input type="hidden" name="fixed_loc" value="{{ loc }}">
               <button class="btn btn-outline-light btn-space">날씨정보</button>
             </form>
             <form action="{% url 'traffic' %}" method="POST" style="float: right">
@@ -61,6 +63,7 @@
                 <input type="hidden" name="Wednesday" value="{{ 수 }}">
                 <input type="hidden" name="Thursday" value="{{ 목 }}">
                 <input type="hidden" name="Friday" value="{{ 금 }}">
+                <input type="hidden" name="fixed_loc" value="{{ loc }}">
               <button type="submit" class="btn btn-outline-light btn-space">교통정보</button>
             </form>
             <form action="{% url 'index' %}" method="POST" style="float: right">
@@ -78,26 +81,4 @@
     {% block content %}
     {%  endblock  %}
 </body>
-<script>
-        function getLocation(){
-            if(navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(function (position){
-                    document.getElementById("Traf_lat").value = position.coords.latitude.toString();
-                    document.getElementById("Traf_long").value = position.coords.longitude.toString();
-                    document.getElementById("Weat_lat").value = position.coords.latitude.toString();
-                    document.getElementById("Weat_long").value = position.coords.longitude.toString();
-
-                }, function (error){
-                    console.error(error);
-                }, {
-                    enableHighAccuracy: false,
-                    maximumAge: 0,
-                    timeout: Infinity
-                });
-            }else{
-                alert('GPS를 지원하지 않습니다');
-            }
-        }
-        getLocation();
-    </script>
 </html>
