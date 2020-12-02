@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 from selenium import webdriver
+from selenium.webdriver.support.ui import Select
 import re
 import pandas as pd
 
@@ -145,6 +146,13 @@ def eclass1(usr_id, usr_pwd):
 
     # URL 접속 시도
     driver.get("http://eclass.kpu.ac.kr/ilos/main/main_form.acl")
+    
+    # update 12/02
+    select = Select(driver.find_element_by_id('LANG'))
+    # select by visible text
+    select.select_by_visible_text('한국어')
+    # select by value 
+    select.select_by_value('ko')
 
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
