@@ -25,7 +25,7 @@ SECRET_KEY = 'oy=x_#8#z7845k6^1^k+it0_wp0v!3f+vp@cy!&!-f8ls*y^ep'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['54.180.213.211']
+ALLOWED_HOSTS = ['54.180.213.211', 'www.kputobi.shop', 'example.com']
 
 
 # Application definition
