@@ -66,6 +66,10 @@ def schedule(request):
     data = {'title': 'Schedule', '월':Mon, '화':Tue, '수':Wed, '목':Thu, '금':Fri, 'loc':loc}
     return render(request, 'ToBi/schedule.html', data)
 
+def error(request):
+    loc = request.POST['fixed_loc']
+    data = {'title': 'error', 'loc': loc}
+    return render(request, 'Error.html', data)
 
 # print(Weather.weatherZip(lat, lon), type(Weather.weatherZip(lat,lon)), '\n\n')
 

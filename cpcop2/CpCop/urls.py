@@ -24,5 +24,6 @@ urlpatterns = [
     path('traffic/', ToBi.views.traffic, name='traffic'),
     path('weather/', ToBi.views.weather, name='weather'),
     path('schedule/', ToBi.views.schedule, name='schedule'),
+    path('error/', ToBi.views.error, name='error'),
     path('', ToBi.views.login, name='login'),
 ]
