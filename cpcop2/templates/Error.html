@@ -1,9 +1,12 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="ko">
   <head>
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Semi+Condensed:100,200,300,400" rel="stylesheet">
-    <link href="Error.css" rel="stylesheet">
+    <link href="{% static 'css/Error.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href=>
   </head>
 
   <body class="loading">
@@ -25,9 +28,16 @@
         <div class="bar"></div>
         <div class="bar"></div>
       </div>
-        <h3>관리자에게 문의하세요:golapaduck29@naver.com <b></b></h3>
+        <h2>ID/PW를 정확히 입력하셨는지 확인해주세요</h2>
+        <h3>관리자에게 문의하세요:rlaxodud214@naver.com <b></b></h3>
     </div>
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="Error.js" type="text/javascript"></script>
+<!--    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>-->
   </body>
+  <script>
+      $(function() {
+        setTimeout(function(){
+          $('body').removeClass('loading');
+        }, 1000);
+      });
+    </script>
 </html>
