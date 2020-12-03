@@ -273,7 +273,7 @@ ul.CTAs a {
 
 #content ul.timeline .event:before {
     left: -207px;
-    content1: attr(data-date);
+    content: attr(data-date);
     text-align: right;
     font-weight: 100;
     font-size: 0.9em;
@@ -295,7 +295,7 @@ ul.CTAs a {
     border-radius: 50%;
     height: 9px;
     width: 9px;
-    content1: "";
+    content: "";
     top: 5px;
 }
 
