@@ -1,15 +1,111 @@
 {% extends 'section.html' %}
 
 {% block content %}
-    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-      <h1 class="display-4">Schedule</h1>
-      <p class="lead">시간표정보입니다</p>
-         <p>위치 : {{ loc_name }}</p>
-         <p>월요일 : {{ 월 }}</p>
-         <p>화요일 : {{ 화 }}</p>
-         <p>수요일 : {{ 수 }}</p>
-         <p>목요일 : {{ 목 }}</p>
-         <p>금요일 : {{ 금 }}</p>
-    </div>
+
+    <table style="width:90%">
+  <tr>
+    <th> </th>
+    <th>월</th>
+    <th>화</th>
+    <th>수</th>
+    <th>목</th>
+    <th>금</th>
+  </tr>
+    <tr>
+    <th>1교시</th>
+    <td>{{ Mon_1 }}</td>
+    <td>{{ Tue_1 }}</td>
+    <td>{{ Wed_1 }}</td>
+    <td>{{ Thu_1 }}</td>
+    <td>{{ Fri_1 }}</td>
+   </tr>
+    <tr>
+    <th>2교시</th>
+    <td>{{ Mon_2 }}</td>
+    <td>{{ Tue_2 }}</td>
+    <td>{{ Wed_2 }}</td>
+    <td>{{ Thu_2 }}</td>
+    <td>{{ Fri_2 }}</td>
+  </tr>
+    <tr>
+    <th>3교시</th>
+    <td>{{ Mon_3 }}</td>
+    <td>{{ Tue_3 }}</td>
+    <td>{{ Wed_3 }}</td>
+    <td>{{ Thu_3 }}</td>
+    <td>{{ Fri_3 }}</td>
+  </tr>
+   <tr>
+    <th>4교시</th>
+   <td>{{ Mon_4 }}</td>
+    <td>{{ Tue_4 }}</td>
+    <td>{{ Wed_4 }}</td>
+    <td>{{ Thu_4 }}</td>
+    <td>{{ Fri_4 }}</td>
+  </tr>
+   <tr>
+    <th>5교시</th>
+   <td>{{ Mon_5 }}</td>
+    <td>{{ Tue_5 }}</td>
+    <td>{{ Wed_5 }}</td>
+    <td>{{ Thu_5 }}</td>
+    <td>{{ Fri_5 }}</td>
+  </tr>
+   <tr>
+    <th>6교시</th>
+    <td>{{ Mon_6 }}</td>
+    <td>{{ Tue_6 }}</td>
+    <td>{{ Wed_6 }}</td>
+    <td>{{ Thu_6 }}</td>
+    <td>{{ Fri_6 }}</td>
+  </tr>
+   <tr>
+    <th>7교시</th>
+   <td>{{ Mon_7 }}</td>
+    <td>{{ Tue_7 }}</td>
+    <td>{{ Wed_7 }}</td>
+    <td>{{ Thu_7 }}</td>
+    <td>{{ Fri_7 }}</td>
+  </tr>
+  <tr>
+   <th>8교시</th>
+   <td>{{ Mon_8 }}</td>
+    <td>{{ Tue_8 }}</td>
+    <td>{{ Wed_8 }}</td>
+    <td>{{ Thu_8 }}</td>
+    <td>{{ Fri_8 }}</td>
+  </tr>
+  <tr>
+   <th>9교시</th>
+  <td>{{ Mon_9 }}</td>
+    <td>{{ Tue_9 }}</td>
+    <td>{{ Wed_9 }}</td>
+    <td>{{ Thu_9 }}</td>
+    <td>{{ Fri_9 }}</td>
+  </tr>
+   <th>10교시</th>
+  <td>{{ Mon_10 }}</td>
+    <td>{{ Tue_10 }}</td>
+    <td>{{ Wed_10 }}</td>
+    <td>{{ Thu_10 }}</td>
+    <td>{{ Fri_10 }}</td>
+  </tr>
+  <tr>
+   <th>11교시</th>
+  <td>{{ Mon_11 }}</td>
+    <td>{{ Tue_11 }}</td>
+    <td>{{ Wed_11 }}</td>
+    <td>{{ Thu_11 }}</td>
+    <td>{{ Fri_11 }}</td>
+  </tr>
+  <tr>
+   <th>12교시</th>
+  <td>{{ Mon_12 }}</td>
+    <td>{{ Tue_12 }}</td>
+    <td>{{ Wed_12 }}</td>
+    <td>{{ Thu_12 }}</td>
+    <td>{{ Fri_12 }}</td>
+  </tr>
+</table>
 {% endblock %}
 

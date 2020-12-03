@@ -1,0 +1,15 @@
+{% extends 'section.html' %}
+
+{% block content %}
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Schedule</h1>
+      <p class="lead">시간표정보입니다</p>
+         <p>위치 : {{ loc_name }}</p>
+         <p>월요일 : {{ 월 }}</p>
+         <p>화요일 : {{ 화 }}</p>
+         <p>수요일 : {{ 수 }}</p>
+         <p>목요일 : {{ 목 }}</p>
+         <p>금요일 : {{ 금 }}</p>
+    </div>
+{% endblock %}
+
