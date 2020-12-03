@@ -135,7 +135,7 @@ ul.CTAs a {
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
-#content {
+#content1 {
     width: 100%;
     padding: 20px;
     min-height: 100vh;
@@ -214,22 +214,7 @@ ul.CTAs a {
 /* ---------------------------------------------------
     TimeLine
 ----------------------------------------------------- */
-.timeline {
-    border-left: 3px solid #727cf5;
-    border-bottom-right-radius: 4px;
-    border-top-right-radius: 4px;
-    background: rgba(114, 124, 245, 0.09);
-    margin: 0 auto;
-    letter-spacing: 0.2px;
-    position: relative;
-    line-height: 1.4em;
-    font-size: 1.03em;
-    padding: 50px;
-    list-style: none;
-    text-align: left;
-    max-width: 40%;
-}
-#timeline {
+ul.timeline {
     border-left: 3px solid #727cf5;
     border-bottom-right-radius: 4px;
     border-top-right-radius: 4px;
@@ -246,25 +231,25 @@ ul.CTAs a {
 }
 
 @media (max-width: 767px) {
-    .timeline {
+    ul.timeline {
         max-width: 98%;
         padding: 25px;
     }
 }
 
-.timeline h1 {
+ul.timeline h1 {
     font-weight: 300;
     font-size: 1.4em;
 }
 
-.timeline h2,
-.timeline h3 {
+ul.timeline h2,
+ul.timeline h3 {
     font-weight: 600;
     font-size: 1rem;
     margin-bottom: 10px;
 }
 
-.timeline .event {
+ul.timeline .event {
     border-bottom: 1px dashed #e8ebf1;
     padding-bottom: 25px;
     margin-bottom: 25px;
@@ -277,20 +262,20 @@ ul.CTAs a {
     }
 }
 
-.timeline .event:last-of-type {
+ul.timeline .event:last-of-type {
     padding-bottom: 0;
     margin-bottom: 0;
     border: none;
 }
 
-.timeline .event:before,
-.timeline .event:after {
+ul.timeline .event:before,
+ul.timeline .event:after {
     position: absolute;
     display: block;
     top: 0;
 }
 
-.timeline .event:before {
+ul.timeline .event:before {
     left: -207px;
     content1: attr(data-date);
     text-align: right;
@@ -306,7 +291,7 @@ ul.CTAs a {
     }
 }
 
-.timeline .event:after {
+ul.timeline .event:after {
     -webkit-box-shadow: 0 0 0 3px #727cf5;
     box-shadow: 0 0 0 3px #727cf5;
     left: -55.8px;
