@@ -234,7 +234,7 @@ ul.CTAs a {
     padding: 50px;
     list-style: none;
     text-align: left;
-    max-width: 40%;
+    max-width: 70%;
 }
 
 @media (max-width: 767px) {
@@ -264,7 +264,7 @@ ul.CTAs a {
 }
 
 @media (max-width: 767px) {
-    #content .timeline .event {
+    #content ul.timeline .event {
         padding-top: 30px;
     }
 }
@@ -292,7 +292,7 @@ ul.CTAs a {
 }
 
 @media (max-width: 767px) {
-    #content .timeline .event:before {
+    #content ul.timeline .event:before {
         left: 0px;
         text-align: left;
     }
@@ -311,7 +311,7 @@ ul.CTAs a {
 }
 
 @media (max-width: 767px) {
-    #content .timeline .event:after {
+    #content ul.timeline .event:after {
         left: -31.8px;
     }
 }
