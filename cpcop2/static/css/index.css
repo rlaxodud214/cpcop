@@ -29,7 +29,7 @@ a, a:hover, a:focus {
     border: none;
     border-radius: 0;
     margin-bottom: 40px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 3px #4b494970;
 }
 
 .navbar-btn {
@@ -37,6 +37,8 @@ a, a:hover, a:focus {
     outline: none !important;
     border: none;
 }
+
+
 
 /* ---------------------------------------------------
     SIDEBAR STYLE
@@ -53,21 +55,21 @@ a, a:hover, a:focus {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #007bff;
+    background: #007bff40;
     color: #fff;
     transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
     transform-origin: bottom left;
 }
 
 #sidebar.active {
-    margin-left: -250px;
+    margin-left: -150px;
     transform: rotateY(100deg);
 }
 
 #sidebar .sidebar-header {
     padding: 20px;
     text-align: center;
-    background: #007bff7d;
+    background: #007bff61;
 }
 
 #sidebar ul.components {
@@ -80,7 +82,7 @@ a, a:hover, a:focus {
     padding: 10px;
 }
 
-#sidebar ul li a { 
+#sidebar ul li a {
     padding: 10px;
     font-size: 1.1em;
     display: block;
@@ -126,10 +128,14 @@ ul.CTAs a {
     margin-bottom: 5px;
 }
 
+
+
+
+
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
-#content1 {
+#content {
     width: 100%;
     padding: 20px;
     min-height: 100vh;
@@ -139,7 +145,7 @@ ul.CTAs a {
 #sidebarCollapse {
     width: 40px;
     height: 40px;
-    background: #f5f5f5;
+    background: #e9ecef;
     cursor: pointer;
 }
 
@@ -206,9 +212,23 @@ ul.CTAs a {
 }
 
 /* ---------------------------------------------------
-    Timeline
+    TimeLine
 ----------------------------------------------------- */
-
+.timeline {
+    border-left: 3px solid #727cf5;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    background: rgba(114, 124, 245, 0.09);
+    margin: 0 auto;
+    letter-spacing: 0.2px;
+    position: relative;
+    line-height: 1.4em;
+    font-size: 1.03em;
+    padding: 50px;
+    list-style: none;
+    text-align: left;
+    max-width: 40%;
+}
 #timeline {
     border-left: 3px solid #727cf5;
     border-bottom-right-radius: 4px;
@@ -232,19 +252,19 @@ ul.CTAs a {
     }
 }
 
-#timeline h1 {
+.timeline h1 {
     font-weight: 300;
     font-size: 1.4em;
 }
 
-#timeline h2,
-#timeline h3 {
+.timeline h2,
+.timeline h3 {
     font-weight: 600;
     font-size: 1rem;
     margin-bottom: 10px;
 }
 
-#timeline .event {
+.timeline .event {
     border-bottom: 1px dashed #e8ebf1;
     padding-bottom: 25px;
     margin-bottom: 25px;
@@ -257,22 +277,22 @@ ul.CTAs a {
     }
 }
 
-#timeline .event:last-of-type {
+.timeline .event:last-of-type {
     padding-bottom: 0;
     margin-bottom: 0;
     border: none;
 }
 
-#timeline .event:before,
-#timeline .event:after {
+.timeline .event:before,
+.timeline .event:after {
     position: absolute;
     display: block;
     top: 0;
 }
 
-#timeline .event:before {
+.timeline .event:before {
     left: -207px;
-    content: attr(data-date);
+    content1: attr(data-date);
     text-align: right;
     font-weight: 100;
     font-size: 0.9em;
@@ -286,7 +306,7 @@ ul.CTAs a {
     }
 }
 
-#timeline .event:after {
+.timeline .event:after {
     -webkit-box-shadow: 0 0 0 3px #727cf5;
     box-shadow: 0 0 0 3px #727cf5;
     left: -55.8px;
@@ -294,7 +314,7 @@ ul.CTAs a {
     border-radius: 50%;
     height: 9px;
     width: 9px;
-    content: "";
+    content1: "";
     top: 5px;
 }
 
