@@ -1,0 +1,52 @@
+<link href="Index.css" rel="stylesheet">
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <!--  This file has been downloaded from bootdey.com    @bootdey on twitter -->
+    <!--  All snippets are MIT license http://bootdey.com/license -->
+    <title>timeline events - Bootdey.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+    	body{margin-top:20px;}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h6 class="card-title">Timeline</h6>
+                    <div id="content">
+                        <ul class="timeline">
+                            <li class="event" data-date="2020 - 11 - 23">
+                                <h3>최초 서버 시작</h3>
+                                <p></p>
+                            </li>
+                            <li class="event" data-date="2020 - 11 - 27">
+                                <h3>24시간 서비스 시작</h3>
+                                <h3>코드 패키징작업 완료</h3>
+                            </li>
+                            <li class="event" data-date="2020 - 12 - 01">
+                                <h3>피드백 및 건의사항 관련글 추가</h3>
+                            </li>
+                            <li class="event" data-date="2020 - 12 - 03">
+                                <h3>오류 페이지 제작 및 적용</h3>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	
+</script>
+</body>
+</html>
