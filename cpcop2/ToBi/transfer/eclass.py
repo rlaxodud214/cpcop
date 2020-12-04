@@ -15,7 +15,7 @@ def eclass(usr_id, usr_pwd):
     driver = webdriver.Chrome("C:\\Users\\dd\\Desktop\\CpCop\\ToBi\\transfer\\chromedriver.exe", options=options)
 
     # 웹 자원 로드를 위해 암묵적으로 딜레이
-    delay_time = 3
+    delay_time = 1
     driver.implicitly_wait(delay_time)
 
     # URL 접속 시도
@@ -128,7 +128,7 @@ def eclass1(usr_id, usr_pwd):
 
 
     # 웹 자원 로드를 위해 암묵적으로 딜레이
-    delay_time = 3
+    delay_time = 1
     driver.implicitly_wait(delay_time)
 
     # URL 접속 시도
