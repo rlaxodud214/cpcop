@@ -68,7 +68,7 @@ def schedule(request):
     Thu1 = request.POST['Thursday']
     Fri1 = request.POST['Friday']
     loc = request.POST['fixed_loc']
-	data = {'월': literal_eval(Mon1), '화':literal_eval(Tue1), '수':literal_eval(Wed1), '목':literal_eval(Thu1), '금':literal_eval(Fri1)}
+    data = {'월': literal_eval(Mon1), '화':literal_eval(Tue1), '수':literal_eval(Wed1), '목':literal_eval(Thu1), '금':literal_eval(Fri1)}
     Mon = ['', '', '', '', '', '', '', '', '', '', '', '']
     Mon_time = ['Mon_1','Mon_2','Mon_3','Mon_4','Mon_5','Mon_6','Mon_7','Mon_8','Mon_9','Mon_10','Mon_11','Mon_12']
     Tue = ['', '', '', '', '', '', '', '', '', '', '', '']

@@ -5,8 +5,6 @@ import ToBi.Weather.WeatherZip as Weather
 import ToBi.Weather.NaverWeather as naver
 import ToBi.Util.Gpss as GPS
 from ast import literal_eval
-import json
-import pandas as pd
 
 def login(request):
     return render(request, 'login.html')
@@ -68,8 +66,19 @@ def schedule(request):
     Thu1 = request.POST['Thursday']
     Fri1 = request.POST['Friday']
     loc = request.POST['fixed_loc']
-    data = {'월': literal_eval(Mon1), '화':literal_eval(Tue1), '수':literal_eval(Wed1), '목':literal_eval(Thu1), '금':literal_eval(Fri1)}
-    Mon = ['', '', '', '', '', '', '', '', '', '', '', '']
+    color1 = ["#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF"]
+    color2 = ["#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF"]
+    color3 = ["#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF"]
+    color4 = ["#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF"]
+    color5 = ["#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF"]
+    color = ["#FA5858","#9AFE2E","#0080FF","#F5A9F2","#F3F781","#A9F5F2","#8258FA","#FE9A2E","#FFBF00","#298A08","#CED8F6","#BDBDBD"]
+    Mon_color = ['Mon_1_color', 'Mon_2_color', 'Mon_3_color', 'Mon_4_color', 'Mon_5_color', 'Mon_6_color', 'Mon_7_color', 'Mon_8_color', 'Mon_9_color', 'Mon_10_color', 'Mon_11_color','Mon_12_color']
+    Tue_color = ['Tue_1_color', 'Tue_2_color', 'Tue_3_color', 'Tue_4_color', 'Tue_5_color', 'Tue_6_color', 'Tue_7_color', 'Tue_8_color', 'Tue_9_color', 'Tue_10_color', 'Tue_11_color','Tue_12_color']
+    Wed_color = ['Wed_1_color', 'Wed_2_color', 'Wed_3_color', 'Wed_4_color', 'Wed_5_color', 'Wed_6_color', 'Wed_7_color', 'Wed_8_color', 'Wed_9_color', 'Wed_10_color', 'Wed_11_color','Wed_12_color']
+    Thu_color = ['Thu_1_color', 'Thu_2_color', 'Thu_3_color', 'Thu_4_color', 'Thu_5_color', 'Thu_6_color', 'Thu_7_color', 'Thu_8_color', 'Thu_9_color', 'Thu_10_color', 'Thu_11_color','Thu_12_color']
+    Fri_color = ['Fri_1_color', 'Fri_2_color', 'Fri_3_color', 'Fri_4_color', 'Fri_5_color', 'Fri_6_color', 'Fri_7_color', 'Fri_8_color', 'Fri_9_color', 'Fri_10_color', 'Fri_11_color','Fri_12_color']
+    datax = {'월': literal_eval(Mon1), '화':literal_eval(Tue1), '수':literal_eval(Wed1), '목':literal_eval(Thu1), '금':literal_eval(Fri1)}
+	Mon = ['', '', '', '', '', '', '', '', '', '', '', '']
     Mon_time = ['Mon_1','Mon_2','Mon_3','Mon_4','Mon_5','Mon_6','Mon_7','Mon_8','Mon_9','Mon_10','Mon_11','Mon_12']
     Tue = ['', '', '', '', '', '', '', '', '', '', '', '']
     Tue_time = ['Tue_1', 'Tue_2', 'Tue_3', 'Tue_4', 'Tue_5', 'Tue_6', 'Tue_7', 'Tue_8', 'Tue_9', 'Tue_10', 'Tue_11','Tue_12']
@@ -82,49 +91,70 @@ def schedule(request):
     list = ['월', '화', '수', '목', '금']
     time = ['09:30', '10:30', '11:30', '12:30', '13:30', '14:30', '15:30', '16:30', '17:25', '18:15', '19:15', '19:55']
     end = ['10:20', '11:20', '12:20', '13:20', '14:20', '15:20', '16:20', '17:20', '18:15', '19:5', '19:55', '']
+	x=0
     for i in range(len(list)):
-        if (data[list[i]] != [[]]):
-            for j in range(len(data[list[i]])):
-                touch = data[list[i]][j][1].split('~')
+        if (datax[list[i]] != [[]]):
+            for j in range(len(datax[list[i]])):
+                touch = datax[list[i]][j][1].split('~')
                 for p in range(len(time)):
                     if (touch[0] == time[p]):
                         if (list[i] == '월'):
                             for k in range(p, len(time), 1):
-                                Mon[k] = data[list[i]][j][0]
+                                Mon[k] = datax[list[i]][j][0]
+                                color1[k] = color[x]
                                 if (touch[1] == end[k]):
+                                    x=x+1
                                     break
                         if (list[i] == '화'):
                             for k in range(p, len(time), 1):
-                                Tue[k] = data[list[i]][j][0]
+                                Tue[k] = datax[list[i]][j][0]
+                                color2[k] = color[x]
                                 if (touch[1] == end[k]):
+                                    x = x + 1
                                     break
                         if (list[i] == '수'):
                             for k in range(p, len(time), 1):
-                                Wed[k] = data[list[i]][j][0]
+                                Wed[k] = datax[list[i]][j][0]
+                                color3[k] = color[x]
                                 if (touch[1] == end[k]):
+                                    x = x + 1
                                     break
                         if (list[i] == '목'):
                             for k in range(p, len(time), 1):
-                                Thu[k] = data[list[i]][j][0]
+                                Thu[k] = datax[list[i]][j][0]
+                                color4[k] = color[x]
                                 if (touch[1] == end[k]):
+                                    x = x + 1
                                     break
                         if (list[i] == '금'):
                             for k in range(p, len(time), 1):
-                                Fri[k] = data[list[i]][j][0]
+                                Fri[k] = datax[list[i]][j][0]
+                                color5[k] = color[x]
                                 if (touch[1] == end[k]):
+                                    x = x + 1
                                     break
 
-    data = {'title': 'Schedule', 'loc':loc, 'Mon':Mon1, 'Tue':Tue1, 'Wed':Wed1, 'Thu':Thu1, 'Fri':Fri1}
+    data = {'title': 'Schedule', 'loc':loc, '월':Mon1, '화':Tue1, '수':Wed1, '목':Thu1, '금':Fri1}
     data1 = dict(zip(Mon_time,Mon))
     data2 = dict(zip(Tue_time,Tue))
     data3 = dict(zip(Wed_time,Wed))
     data4 = dict(zip(Thu_time,Thu))
     data5 = dict(zip(Fri_time,Fri))
+    data6 = dict(zip(Mon_color,color1))
+    data7 = dict(zip(Tue_color,color2))
+    data8 = dict(zip(Wed_color,color3))
+    data9 = dict(zip(Thu_color,color4))
+    data10 = dict(zip(Fri_color,color5))
     data.update(data1)
     data.update(data2)
     data.update(data3)
     data.update(data4)
     data.update(data5)
+    data.update(data6)
+    data.update(data7)
+    data.update(data8)
+    data.update(data9)
+    data.update(data10)
     return render(request, 'ToBi/schedule.html', data)
 
 def error(request):
