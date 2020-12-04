@@ -11,19 +11,21 @@
         <style>
 <!--        html,
             body {
-              height: auto;
+                height: auto;
             }
 
             body {
-              display: -ms-flexbox;
-            /*   display: flex; */
-              -ms-flex-align: center;
-              align-items: center;
-              padding-top: 50%;
-            /*   max-width: 600px; */
-            /*   min-width: 600px; */
-              padding-bottom: 40px;
-              background-color: #f5f5f5;
+                margin: auto;
+                width: 50%;
+                top: 50%;
+                font-weight: normal;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-align: center;
+                align-items: center;
+                padding-top: 40px;
+                padding-bottom: 40px;
+                background-color: #f5f5f5;
             }
 
             .form-signin {
@@ -61,7 +63,7 @@
     <body>
        <div>
           <form class="form-signin" method="POST" action ="{% url 'index' %}" >
-            <h1 class="h3 mb-3 font-weight-normal">시간표 정보를 얻기 위해서 e-class 로그인이 필요합니다.</h1>
+            <h1 class="h3 mb-3 font-weight-normal">시간표 정보를 얻기 위해서 <br>e-class 로그인이 필요합니다.</h1>
               {% csrf_token %}
               <label for="inputEmail" class="sr-only">Email address</label>
               <input name="username" type="text" id="inputEmail" class="form-control" placeholder="eclass-id" required autofocus>
