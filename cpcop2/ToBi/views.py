@@ -78,7 +78,7 @@ def schedule(request):
     Thu_color = ['Thu_1_color', 'Thu_2_color', 'Thu_3_color', 'Thu_4_color', 'Thu_5_color', 'Thu_6_color', 'Thu_7_color', 'Thu_8_color', 'Thu_9_color', 'Thu_10_color', 'Thu_11_color','Thu_12_color']
     Fri_color = ['Fri_1_color', 'Fri_2_color', 'Fri_3_color', 'Fri_4_color', 'Fri_5_color', 'Fri_6_color', 'Fri_7_color', 'Fri_8_color', 'Fri_9_color', 'Fri_10_color', 'Fri_11_color','Fri_12_color']
     datax = {'월': literal_eval(Mon1), '화':literal_eval(Tue1), '수':literal_eval(Wed1), '목':literal_eval(Thu1), '금':literal_eval(Fri1)}
-	Mon = ['', '', '', '', '', '', '', '', '', '', '', '']
+    Mon = ['', '', '', '', '', '', '', '', '', '', '', '']
     Mon_time = ['Mon_1','Mon_2','Mon_3','Mon_4','Mon_5','Mon_6','Mon_7','Mon_8','Mon_9','Mon_10','Mon_11','Mon_12']
     Tue = ['', '', '', '', '', '', '', '', '', '', '', '']
     Tue_time = ['Tue_1', 'Tue_2', 'Tue_3', 'Tue_4', 'Tue_5', 'Tue_6', 'Tue_7', 'Tue_8', 'Tue_9', 'Tue_10', 'Tue_11','Tue_12']
@@ -91,7 +91,7 @@ def schedule(request):
     list = ['월', '화', '수', '목', '금']
     time = ['09:30', '10:30', '11:30', '12:30', '13:30', '14:30', '15:30', '16:30', '17:25', '18:15', '19:15', '19:55']
     end = ['10:20', '11:20', '12:20', '13:20', '14:20', '15:20', '16:20', '17:20', '18:15', '19:5', '19:55', '']
-	x=0
+    x=0
     for i in range(len(list)):
         if (datax[list[i]] != [[]]):
             for j in range(len(datax[list[i]])):
