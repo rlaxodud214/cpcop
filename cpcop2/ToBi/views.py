@@ -16,13 +16,9 @@ def index(request):
         data = {'월':[[]], '화':[[]], '수':[[]], '목':[[]], '금':[[]]}
         t = 0
         try:
-            t = print(time.time())
             data.update(eclass.eclass1(id,pw))
-            print((time.time()-t)//1000.0)
             return render(request, 'index.html', data)
-
         except:
-            print((time.time()-t)//1000.0)
             return render(request, 'Error.html', data)
 
     except:
