@@ -14,7 +14,6 @@
                 background: #f8f8f8;
                 height: auto;
             }
-
             .login #header {
                 height: auto;
                 padding: 15px 16px;
@@ -92,7 +91,7 @@
     </head>
 
     <body>
-       <div id="taeyoung">
+       <div class="login">
           <form class="form-signin" method="POST" action ="{% url 'index' %}" >
             <h1 class="h3 mb-3 font-weight-normal">시간표 정보를 얻기 위해서 e-class 로그인이 필요합니다.</h1>
               {% csrf_token %}
