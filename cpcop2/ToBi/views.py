@@ -5,7 +5,7 @@ import ToBi.Weather.WeatherZip as Weather
 import ToBi.Weather.NaverWeather as naver
 import ToBi.Util.Gpss as GPS
 from ast import literal_eval
-
+import time
 def login(request):
     return render(request, 'login.html')
 
@@ -15,10 +15,13 @@ def index(request):
         pw = request.POST['password']
         data = {'월':[[]], '화':[[]], '수':[[]], '목':[[]], '금':[[]]}
         try:
+            t = print(time.time())
+            print(t)
             data.update(eclass.eclass1(id,pw))
+            print(time.time()-t)
         except:
             return render(request, 'Error.html', data)
-        return render(request, 'index.html',data)
+
     except:
         Mon = request.POST['Monday']
         Tue = request.POST['Tuesday']
