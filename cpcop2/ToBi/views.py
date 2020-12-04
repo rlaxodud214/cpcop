@@ -18,8 +18,11 @@ def index(request):
             t = print(time.time())
             print(t)
             data.update(eclass.eclass1(id,pw))
-            print(time.time()-t)
+            print((time.time()-t)//1000.0)
+            return render(request, 'index.html', data)
+        
         except:
+            print((time.time()-t)//1000.0)
             return render(request, 'Error.html', data)
 
     except:
