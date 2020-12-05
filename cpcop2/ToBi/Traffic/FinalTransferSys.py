@@ -1,6 +1,6 @@
 import time
-from Traffic import NearStation,ShuttleDict,ShuttleTimeGo,SpanTime,SpanTimeNaver,SubDict,SubTime
 from Util import *
+import NearStation,ShuttleDict,ShuttleTimeGo,SpanTime,SpanTimeNaver,SubDict,SubTime
 # dict_go.py 있어야함 -> 딕셔너리의 키는 시간, 값은 셔틀 분 데이터 값
 
 start = time.time()
