@@ -8,7 +8,7 @@ start = time.time()
 station_name = "갈산"
 year = "2020"
 month = "12"
-day = "02"
+day = "05"
 
 dictgo = ShuttleDict.timetableGo
 now_location = ['37.491575', '127.030912']

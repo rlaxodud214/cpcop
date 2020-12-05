@@ -14,11 +14,15 @@ def spanTime(Near_Station_Lat, Near_Station_Lon):
         quote_plus("endX"): '126.74',  # 정왕역 좌표127.027637
         quote_plus("endY"): '37.351828',  # 37.497950
     })
-    url = url + unquote(params)
-    req = requests.get(url)
-    xpars = xmltodict.parse(req.text)
-    dump = json.dumps(xpars)
-    data1 = json.loads(dump)
-    time = data1['ServiceResult']['msgBody']['itemList']['time']
-    return str(time)
+    if (Near_Station_Lat == 126.742989 and Near_Station_Lon==37.351735):
+        return "0"
 
+    else:
+        url = url + unquote(params)
+        req = requests.get(url)
+        xpars = xmltodict.parse(req.text)
+        dump = json.dumps(xpars)
+        data1 = json.loads(dump)
+        # pd.DataFrame(data1['ServiceResult']['msgBody']['itemList']['pathList'])
+        time = data1['ServiceResult']['msgBody']['itemList']['time']
+        return str(time)

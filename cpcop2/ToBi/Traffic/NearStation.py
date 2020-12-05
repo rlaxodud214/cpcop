@@ -1,6 +1,6 @@
 from urllib.request import urlopen
 from urllib.parse import quote_plus, unquote
-import xmltodict, json,  ToBi.Traffic.SubDIct
+import xmltodict, json,  Traffic.SubDict
 import pandas as pd
 import requests
 from urllib.parse import urlencode
@@ -40,8 +40,8 @@ def nearBusStation(lat, lon):
             "serviceKey"): "p%2FjvMYI4C7znYs1z7bwkpbC5XOPhQ2c5XMyRYcH6A%2BLnvRkIO95%2F9tyKecxg06ais5rGNSxsY6eplXsP3%2F%2FiSw%3D%3D",
         quote_plus("startX"): lon,  # 현재위치가 들어갈 곳
         quote_plus("startY"): lat,  # 현재위치가 들어갈 곳
-        quote_plus("endX"): ToBi.Traffic.SubDIct.subDict[nearSubStation(lat, lon)[:-1]][1],  # 이 좌표는 현재위치로부터 가까운 역인 강남역의 좌표임
-        quote_plus("endY"): ToBi.Traffic.SubDIct.subDict[nearSubStation(lat, lon)[:-1]][0],
+        quote_plus("endX"): Traffic.SubDict.subDict[nearSubStation(lat, lon)[:-1]][1],  # 이 좌표는 현재위치로부터 가까운 역인 강남역의 좌표임
+        quote_plus("endY"): Traffic.SubDict.subDict[nearSubStation(lat, lon)[:-1]][0],
     })
 
     url = url + unquote(params)
