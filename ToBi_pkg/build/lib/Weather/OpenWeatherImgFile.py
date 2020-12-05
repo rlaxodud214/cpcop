@@ -31,5 +31,3 @@ def imgFile():
     img_matrix = np.array(img)
     plt.imshow(img_matrix)
     img.save('now_weather.png')
-
-imgFile()
