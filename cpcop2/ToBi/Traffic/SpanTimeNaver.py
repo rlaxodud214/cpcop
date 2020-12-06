@@ -1,13 +1,11 @@
 from urllib.request import urlopen
 from urllib.parse import urlencode, quote_plus, unquote
-import json
+import json, time
 from urllib.request import urlopen
 import urllib
 
 
 # 인자값 : 역 코드, 년, 달, 일, 시간, 분
-
-
 def spanTimeNaver(dptcode, year, month, date, hour, minute):
     dict_station = {"갈산": "20117", "금정": "443", "기흥": "1537", "강남": "222"}
     dptcoded = dict_station[dptcode]
@@ -65,23 +63,28 @@ def spanTimeMinute(h1,m1,h2,m2):
     cm2 = h2i*60 + m2i
     return h1i, m1i, h2i, m2i, str(cm2 - cm1)
 
-
-
-def returnListu(station_name, year, month, day, hour, minute):
+def returnListu(station_name, year, month, day, hour, minute):  # 역이름, 년, 월, 일, 셔틀 탑승 (시간, 분)
     lis = []
     temp_time = timeToTempTime(hour, minute)
     data = spanTimeNaver(station_name, year, month, day, temp_time[0], temp_time[1])
     data = spanTimeMinute(data[0], data[1], data[2], data[3])
+    print(data)
     lis.append(data)
 
     i = 0
+    sss = time.time()
     while len(lis) < 3:
         if minute < 0:
             minute = 59
             hour -= 1
-        temp_time = timeToTempTime(hour, minute)
+        temp_time = timeToTempTime(hour, minute) # (2, 5) -> (02, 05)
+        print("0차", data)
         data = spanTimeNaver(station_name, year, month, day, temp_time[0], temp_time[1])
+        print("1차", data)
         data = spanTimeMinute(data[0], data[1], data[2], data[3])
+        print("2차", data)
+        print("list[i]", lis[i])
+        print("--------------------------------------")
         if lis[i] == data:
             minute -= 1
             continue
