@@ -37,7 +37,13 @@ def traffic(request):
     Thu = request.POST['Thursday']
     Fri = request.POST['Friday']
     loc = request.POST['fixed_loc']
-    data1 = Transfer.Transfer()
+    eclass_data = {}
+    eclass_data['월'] = Mon
+    eclass_data['화'] = Tue
+    eclass_data['수'] = Wed
+    eclass_data['목'] = Thu
+    eclass_data['금'] = Fri
+    data1 = Transfer.Transfer(eclass_data)
     data = {'title': 'Traffic',  '월':Mon, '화':Tue, '수':Wed, '목':Thu, '금':Fri, 'loc':loc, 'location':data1[0], 'data1':data1[1],
             'data2':data1[2], 'data3':data1[3], 'data4':data1[4], 'data5':data1[5], 'data6':data1[6]}
     return render(request, 'ToBi/traffic.html', data)
