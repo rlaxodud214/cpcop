@@ -3,8 +3,8 @@
 {% block content %}
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h1 class="display-4">Traffic</h1>
-      <p class="lead">교통정보입니다</p>
-    
+      <p> class="lead">교통정보입니다</p>
+      <p> 가장 가까운 역 : {{ location }}역</p>
     </div>
 
     <div>
@@ -16,7 +16,6 @@
                             <h6 class="card-title">교통알리미</h6>
                             <div id="content">
                                 <ul class="timeline">
-                                    <h5>가장 가까운 역 : {{ location }}역</h5>
                                     <li class="event" data-date="버스   ">
                                         <h3>출발시간 : {{ data1 }}</h3>
                                         <p></p>
