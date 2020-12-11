@@ -17,19 +17,19 @@
                             <h6 class="card-title">교통알리미</h6>
                             <div id="content">
                                 <ul class="timeline">
-                                    <h5>가장 가까운 역 : 강남역</h5>
+                                    <h5>가장 가까운 역 : {{ location }}역</h5>
                                     <li class="event" data-date="버스   ">
-                                        <h3>출발시간 : 09시 30분</h3>
+                                        <h3>출발시간 : {{ data1 }}</h3>
                                         <p></p>
                                     </li>
                                     <li class="event" data-date="지하철">
-                                        <h3>출발시간 : 09시 45분</h3>
+                                        <h3>출발시간 : {{ data2 }}</h3>
                                     </li>
                                     <li class="event" data-date="셔틀버스">
-                                        <h3>출발시간 : 11시 17분</h3>
+                                        <h3>출발시간 : {{ data5 }}</h3>
                                     </li>
                                     <li class="event" data-date="학교">
-                                        <h3>도착시간 : 11시 30분</h3>
+                                        <h3>도착시간 : {{ data6 }}</h3>
                                     </li>
                                 </ul>
                             </div>

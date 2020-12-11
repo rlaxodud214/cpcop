@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 import ToBi.transfer.eclass as eclass
-import ToBi.Weather.WeatherZip as Weather
+import ToBi.Traffic.FinalTransferSys_Test as Transfer
 import ToBi.Weather.NaverWeather as naver
 import ToBi.Util.Gpss as GPS
 from ast import literal_eval
@@ -37,7 +37,9 @@ def traffic(request):
     Thu = request.POST['Thursday']
     Fri = request.POST['Friday']
     loc = request.POST['fixed_loc']
-    data = {'title': 'Traffic',  '월':Mon, '화':Tue, '수':Wed, '목':Thu, '금':Fri, 'loc':loc}
+    data1 = Transfer.Transfer()
+    data = {'title': 'Traffic',  '월':Mon, '화':Tue, '수':Wed, '목':Thu, '금':Fri, 'loc':loc, 'location':data1[0], 'data1':data1[1],
+            'data2':data1[2], 'data3':data1[3], 'data4':data1[4], 'data5':data1[5], 'data6':data1[6]}
     return render(request, 'ToBi/traffic.html', data)
 
 def weather(request):
