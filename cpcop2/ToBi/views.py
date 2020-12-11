@@ -47,8 +47,8 @@ def weather(request):
     Thu = request.POST['Thursday']
     Fri = request.POST['Friday']
     loc = request.POST['fixed_loc']
-    #loc = GPS.reverseLocation(lat,lon)
     loc_name = loc.split(',')
+    loc_location = GPS.reverseLocation(loc_name[0], loc_name[1])
     data = naver.naverWeather(loc_name[0], loc_name[1])
     temp = data[0]
     maxtemp = data[1]
@@ -58,7 +58,7 @@ def weather(request):
     rain = data[3]
     howrain = data[4]
     data = {'title': 'Weather', '월':Mon, '화':Tue, '수':Wed, '목':Thu, '금':Fri, 'temp':temp, 'maxtemp':maxtemp, 'mintemp':mintemp,
-            'rep':rep, 'wds':wds,'rain':rain, 'howrain':howrain, "loc":loc, 'loc_name':GPS.reverseLocation(loc_name[0],loc_name[1])}
+            'rep':rep, 'wds':wds,'rain':rain, 'howrain':howrain, "loc":loc, "loc_location":loc_location, 'loc_name':GPS.reverseLocation(loc_name[0],loc_name[1])}
     return render(request, 'ToBi/weather.html', data)
 
 def schedule(request):

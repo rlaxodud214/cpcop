@@ -52,7 +52,7 @@
         <nav class="my-2 my-md-0 mr-md-3">
             <form action="{% url 'schedule' %}" method="POST" style="float: right">
                 {%  csrf_token %}
-                 <input type="hidden" name="Monday" value="{{ 월 }}">
+                <input type="hidden" name="Monday" value="{{ 월 }}">
                 <input type="hidden" name="Tuesday" value="{{ 화 }}">
                 <input type="hidden" name="Wednesday" value="{{ 수 }}">
                 <input type="hidden" name="Thursday" value="{{ 목 }}">
@@ -91,40 +91,6 @@
             </form>
 
         </nav>
-    </div>
-    <div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <h6 class="card-title">교통알리미</h6>
-                            <div id="content">
-                                <ul class="timeline">
-                                    <h5>가장 가까운 역은 강남역입니다.</h5>
-                                    <li class="event" data-date="버스   ">
-                                        <h3>출발시간 : 09시 30분</h3>
-                                        <p></p>
-                                    </li>
-                                    <li class="event" data-date="지하철">
-                                        <h3>출발시간 : 09시 45분</h3>
-                                    </li>
-                                    <li class="event" data-date="셔틀버스">
-                                        <h3>출발시간 : 11시 17분</h3>
-                                    </li>
-                                    <li class="event" data-date="학교">
-                                        <h3>도착시간 : 11시 30분</h3>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-            <script src="http://netdna.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-            <script type="text/javascript"></script>
-        </div>
     </div>
     {% block content %}
     {%  endblock  %}
