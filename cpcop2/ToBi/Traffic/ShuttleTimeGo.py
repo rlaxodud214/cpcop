@@ -9,6 +9,7 @@ def shuttleTimeGo(hour, minute, dict_go):
             if (int(dict_go[defhour][0]) + defhour * 60 + 15 > convminute):
                 # 셔틀시간+15분이 학교에 도착하는 시간이라는 가정하에,시간대에 가장 이른 셔틀의 도착시간은 defminute보다 크면 안됨,
                 defhour -= 1
+                defminute = 60
                 # 따라서 defhour을 1 빼주고
                 continue
                 # defminute를 60으로 설정.

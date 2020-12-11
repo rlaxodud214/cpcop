@@ -1,11 +1,13 @@
 from urllib.request import urlopen
 from urllib.parse import urlencode, quote_plus, unquote
-import json, time
+import json
 from urllib.request import urlopen
 import urllib
 
 
 # 인자값 : 역 코드, 년, 달, 일, 시간, 분
+
+
 def spanTimeNaver(dptcode, year, month, date, hour, minute):
     dict_station = {"갈산": "20117", "금정": "443", "기흥": "1537", "강남": "222"}
     dptcoded = dict_station[dptcode]
@@ -31,7 +33,7 @@ def spanTimeNaver(dptcode, year, month, date, hour, minute):
         return "err"
 
 
-def timeToTempTime(hour_m, minute_m):
+def timeToTempTime(hour_m, minute_m): # "01"-> 1
     if len(str(minute_m)) == 1:
         temp_minute = "0" + str(minute_m)
     else:
@@ -42,7 +44,7 @@ def timeToTempTime(hour_m, minute_m):
         temp_hour = str(hour_m)
     return temp_hour, temp_minute
 
-def spanTimeMinute(h1,m1,h2,m2):
+def spanTimeMinute(h1,m1,h2,m2): # "09", "30", "10", "30" -> 60
     if h1[0] == '0':
         h1i = int(h1[1])
     else:
@@ -63,45 +65,13 @@ def spanTimeMinute(h1,m1,h2,m2):
     cm2 = h2i*60 + m2i
     return h1i, m1i, h2i, m2i, str(cm2 - cm1)
 
-def returnListu(station_name, year, month, day, hour, minute):  # 역이름, 년, 월, 일, 셔틀 탑승 (시간, 분)
-    lis = []
+
+
+def returnListu(station_name, year, month, day, hour, minute):
     temp_time = timeToTempTime(hour, minute)
     data = spanTimeNaver(station_name, year, month, day, temp_time[0], temp_time[1])
     data = spanTimeMinute(data[0], data[1], data[2], data[3])
-    print(data)
-    lis.append(data)
-
-    i = 0
-    sss = time.time()
-    while len(lis) < 3:
-        if minute < 0:
-            minute = 59
-            hour -= 1
-        temp_time = timeToTempTime(hour, minute) # (2, 5) -> (02, 05)
-        print("0차", data)
-        data = spanTimeNaver(station_name, year, month, day, temp_time[0], temp_time[1])
-        print("1차", data)
-        data = spanTimeMinute(data[0], data[1], data[2], data[3])
-        print("2차", data)
-        print("list[i]", lis[i])
-        print("--------------------------------------")
-        if lis[i] == data:
-            minute -= 1
-            continue
-        else:
-            lis.append(data)
-            i += 1
-        minute -= 2
-    return lis
+    return data
 # 상현
-
-station_name = "갈산"
-year = "2020"
-month = "12"
-day = "02"
-hour = 9
-minute = 15
-listu = returnListu(station_name, year, month, day, hour, minute)
-print(listu)
 
 # 출발시간, 출발 분, 도착시간, 도착 분, 소요시간
