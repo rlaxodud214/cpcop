@@ -86,7 +86,7 @@ def Transfer(data):
             if n >= 5:
                 n = 0
     # 모호한 값을 방지하기 위한 for문 5번 (공강, 예외적인 데이터 때문)
-
+    print(data)
     data2 = Final_Transfer_Sys("강남", str(eclass[1])[0:2], str(eclass[1])[3:5])
     return data2
 
