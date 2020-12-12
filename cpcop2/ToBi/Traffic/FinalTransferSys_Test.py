@@ -80,14 +80,14 @@ def Transfer(data):
     eclass = "" # 모호한 값을 방지하기 위해 eclass값 초기화
     for i in range(5):
         try:
-            eclass = data[week[n]][0]
+            eclass = data[week[n]][0][1]
         except:
             n += 1
             if n >= 5:
                 n = 0
     # 모호한 값을 방지하기 위한 for문 5번 (공강, 예외적인 데이터 때문)
-    print(data)
-    data2 = Final_Transfer_Sys("강남", str(eclass[1])[0:2], str(eclass[1])[3:5])
+    print(data[week[n]])
+    data2 = Final_Transfer_Sys("강남", eclass[0:2], eclass[3:5])
     return data2
 
 print(Transfer)
