@@ -87,7 +87,7 @@ def Transfer(data):
                 n = 0
     # 모호한 값을 방지하기 위한 for문 5번 (공강, 예외적인 데이터 때문)
     print(data[week[n]])
-    data2 = Final_Transfer_Sys("강남", eclass[0][0:2], eclass[0][3:5])
+    data2 = Final_Transfer_Sys("강남", eclass[0:2], eclass[3:5])
     return data2
 
 print(Transfer)

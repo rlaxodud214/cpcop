@@ -43,7 +43,8 @@ def traffic(request):
     eclass_data['수'] = Wed
     eclass_data['목'] = Thu
     eclass_data['금'] = Fri
-    data1 = Transfer.Transfer(eclass_data)
+    datax = {'월': literal_eval(Mon), '화': literal_eval(Tue), '수': literal_eval(Wed), '목': literal_eval(Thu), '금': literal_eval(Fri)}
+    data1 = Transfer.Transfer(datax)
     data = {'title': 'Traffic',  '월':Mon, '화':Tue, '수':Wed, '목':Thu, '금':Fri, 'loc':loc, 'location':data1[0], 'data1':data1[1],
             'data2':data1[2], 'data3':data1[3], 'data4':data1[4], 'data5':data1[5], 'data6':data1[6]}
     return render(request, 'ToBi/traffic.html', data)
