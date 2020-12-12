@@ -26,4 +26,5 @@ urlpatterns = [
     path('schedule/', ToBi.views.schedule, name='schedule'),
     path('error/', ToBi.views.error, name='error'),
     path('', ToBi.views.login, name='login'),
+    path('.well-known/pki-validation/9C4347E1741BFD986F411C957F5E2036.txt'),
 ]
