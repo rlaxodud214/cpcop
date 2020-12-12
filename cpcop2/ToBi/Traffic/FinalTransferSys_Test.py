@@ -70,12 +70,13 @@ def Transfer(data):
     # }
     # 서버에서 받아오는 시간표 데이터
     eclass = ""  # 모호한 값을 방지하기 위해 eclass값 초기화
-    try:
-        eclass = data[week[n]][0][1]
-    except:
-        eclass = data[week[0]][0][1]
-    # 모호한 값을 방지하기 위한 for문 5번 (공강, 예외적인 데이터 때문)
-    print(data[week[n]])
+    for i in range(5):
+        try:
+            eclass = data[week[n]][0][1]
+        except:
+            n += 1
+            if n >= 5:
+                n = 0
     data2 = Final_Transfer_Sys("강남", eclass[0:2], eclass[3:5])
     return data2
 
