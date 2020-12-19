@@ -44,7 +44,15 @@ def traffic(request):
     eclass_data['목'] = Thu
     eclass_data['금'] = Fri
     datax = {'월': literal_eval(Mon), '화': literal_eval(Tue), '수': literal_eval(Wed), '목': literal_eval(Thu), '금': literal_eval(Fri)}
-    data1 = Transfer.Transfer(datax)
+    if loc == "37.494769,127.026635":
+        data1 = Transfer.Transfer(datax, "강남")
+    if loc == "37.517565,126.723319":
+        data1 = Transfer.Transfer(datax, "갈산")
+    if loc == "37.374364,126.950909":
+        data1 = Transfer.Transfer(datax, "금정")
+    if loc == "37.278692,127.112100":
+        data1 = Transfer.Transfer(datax, "기흥")
+        
     data = {'title': 'Traffic',  '월':Mon, '화':Tue, '수':Wed, '목':Thu, '금':Fri, 'loc':loc, 'location':data1[0], 'data1':data1[1],
             'data2':data1[2], 'data3':data1[3], 'data4':data1[4], 'data5':data1[5], 'data6':data1[6]}
     return render(request, 'ToBi/traffic.html', data)

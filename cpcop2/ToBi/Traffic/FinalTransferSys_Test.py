@@ -57,7 +57,7 @@ def Final_Transfer_Sys(station_name, h1, m1):
 # 받아올 시간
 # 받아올 분
 # 함수 출력 예시 : python
-def Transfer(data):
+def Transfer(data, location):
     n = time.localtime().tm_wday  # 현재 요일
     week = ['월', '화', '수', '목', '금']  # 요일 리스트
 
@@ -77,7 +77,7 @@ def Transfer(data):
             n += 1
             if n >= 5:
                 n = 0
-    data2 = Final_Transfer_Sys("강남", eclass[0:2], eclass[3:5])
+    data2 = Final_Transfer_Sys(location, eclass[0:2], eclass[3:5])
     return data2
 
 
